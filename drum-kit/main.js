@@ -8,4 +8,6 @@ window.addEventListener("keydown", function (e) {
 
   console.log(key);
   key.classList.add("playing");
+
+  const keys = document.querySelectorAll(".keys");
 });
