@@ -10,4 +10,7 @@ window.addEventListener("keydown", function (e) {
   key.classList.add("playing");
 
   const keys = document.querySelectorAll(".keys");
+  keys.forEach(key => {
+    key.addEventListener("transitionend", removeTransition);
+  });
 });
