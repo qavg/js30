@@ -8,9 +8,19 @@ window.addEventListener("keydown", function (e) {
 
   console.log(key);
   key.classList.add("playing");
+});
 
-  const keys = document.querySelectorAll(".keys");
-  keys.forEach(key => {
-    key.addEventListener("transitionend", removeTransition);
-  });
+function removeTransition(e) {
+  //   console.log(e);
+  if (e.propertyName !== "transform") return;
+  console.log(
+    "🚀 ~ file: main.js ~ line 16 ~ removeTransition ~ e.propertyName",
+    e.propertyName,
+  );
+  this.classList.remove("playing");
+}
+
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => {
+  key.addEventListener("transitionend", removeTransition);
 });
